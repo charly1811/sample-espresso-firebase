@@ -45,8 +45,7 @@ public class FirebaseTest {
 
                     @Override
                     public void onCancelled(FirebaseError firebaseError) {
-                        firebaseError.toException().printStackTrace();
-                        pushIdlingResource.onOperationEnded();
+                        throw firebaseError.toException();
                     }
                 });
             }
