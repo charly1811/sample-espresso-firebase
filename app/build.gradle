@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "io.github.charly1811.espressofirebase"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:23.3.0'
+
+    // JUnit4
+    testCompile 'junit:junit:4.12'
+
+    // Espresso Core library
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
+
+    // Espresso Idling library (Used to make Espresso "Wait" for custom events"
+    androidTestCompile 'com.android.support.test.espresso:espresso-idling-resource:2.2.2'
+
+    // Android Support Annotations
+    androidTestCompile 'com.android.support:support-annotations:23.+'
+
+    // The Android Test Runner
+    androidTestCompile 'com.android.support.test:runner:0.5'
+
+    compile 'com.firebase:firebase-client-android:2.5.2'
+
+}
